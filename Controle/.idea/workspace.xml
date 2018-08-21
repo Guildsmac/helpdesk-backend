@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6d9ac28-6dcd-40fb-9966-24159e79a38d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-668680579">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="46" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="46" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="18" />
+          <entry key="php" value="7698" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="12" />
+          <entry key="PHP" value="7686" />
+          <entry key="PLAIN_TEXT" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.composer.actions" />
+      <usages-collector id="statistics.php.composer.command.options" />
+      <usages-collector id="statistics.php.new.test" />
+      <usages-collector id="statistics.php.rename.constructor" />
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="8" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="866063695">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>idCliente</find>
+      <find>idFuncionario</find>
+      <find>idProtocolo</find>
+      <find>idCategoria</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/connection.php" />
+        <option value="$PROJECT_DIR$/database.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Controle/requires.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/CategoriaProduto.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Pessoa.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Categoria.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Protocolo.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Controle/config.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Controle/database.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Cliente.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Conjuge.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Dependente.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Funcionario.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Modelo/CategoriaProtocolo.php" />
+        <option value="$PROJECT_DIR$/../Helpdesk Back-End/Controle/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="440" />
+    <option name="y" value="50" />
+    <option name="width" value="1400" />
+    <option name="height" value="387" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Angular</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Controle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Controle" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\guild\PhpstormProjects\Helpdesk Back-End" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6d9ac28-6dcd-40fb-9966-24159e79a38d" name="Default Changelist" comment="" />
+      <created>1534718326403</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534718326403</updated>
+      <workItem from="1534718327631" duration="1665000" />
+      <workItem from="1534729392178" duration="13010000" />
+      <workItem from="1534762537549" duration="54000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="14729000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2238806" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32952183" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Controle/requires.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Controle/connection.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Controle/config.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Controle/database.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Cliente.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Conjuge.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Dependente.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Funcionario.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Pessoa.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Categoria.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/Protocolo.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Modelo/CategoriaProtocolo.php" />
+    <entry file="file://$PROJECT_DIR$/../Helpdesk Back-End/Controle/index.php" />
+  </component>
+</project>
