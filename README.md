@@ -1,4 +1,4 @@
-# helpdesk-backend
+# Helpdesk Backend (PHP)
 
 Backend de uma aplicação de helpdesk que permite as operações CRUD no banco de dados MySql.
 Criado com o objetivo de permitir um aplicativo React Native acessar informações do MySql.
