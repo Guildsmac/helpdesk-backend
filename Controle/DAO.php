@@ -26,7 +26,6 @@ function DBUpdate($table, array $data, $where = null){
     return DBExecute($query);
 }
 function DBRead($table, $params = null, $fields = "*"){
-    $table = DB_PREFIX . '_' . $table;
     $params = ($params) ? " {$params}" : null;
     $query = "SELECT {$fields} FROM {$table}{$params}";
     $result = DBExecute($query);

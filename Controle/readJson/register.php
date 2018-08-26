@@ -13,8 +13,8 @@
             $id = "";
             if ($data["nomePessoa"] & $data["cpfPessoa"] & $data["salarioFuncionario"] & $data["senha"]) {
                 $tempCpf = $data['cpfPessoa'];
-                if (!DBRead("pessoa", "WHERE cpfPessoa = '$tempCpf'")) {
-                    $return = DBRead("pessoa", null, 'idPessoa');
+                if (!DBRead("hel_pessoa", "WHERE cpfPessoa = '$tempCpf'")) {
+                    $return = DBRead("hel_pessoa", null, 'idPessoa');
                     if ($return) {
                         end($return);
                         $key = key($return);
