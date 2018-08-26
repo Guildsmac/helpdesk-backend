@@ -1,5 +1,6 @@
 <?php
     include 'C:/Users/guild/PhpstormProjects/Helpdesk Back-End/Controle/config.php';
+
     $json = file_get_contents('php://input');
     $obj = json_decode($json, true);
     $cpf = $obj['cpfPessoa'];
