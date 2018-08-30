@@ -7,7 +7,7 @@ class Funcionario extends Pessoa{
         parent::__construct($nome, $cpf, $id);
         $this->salario = $salario;
 
-        $this->senha = hash('sha256', $senha);;
+        $this->senha = $senha;
 
     }
 

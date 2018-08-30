@@ -86,8 +86,75 @@
             }else
                 echo json_encode("Preencha todos os campos");
         }
+        else if(strcmp($table, "protocolo")==0){
+            $data["date"] = getFormattedDate($obj["date"]);
+            $data["duracao"] = $obj["duracao"];
+            $data["detalhes"] = $obj["detalhes"];
+            $data["idFuncionario"] = $obj["idFuncionario"];
+            $data["idCliente"] = $obj["idCliente"];
+            $data["idCategoria"] = $obj["idCategoria"];
+            $fun = null;
+            $cli = null;
+            $cat = null;
+
+            $tempId = $data["idFuncionario"];
+            $funcInfo = DBRead("hel_pessoa as p, hel_funcionario as f", "WHERE p.idPessoa = '$tempId' and p.idPessoa = f.idFuncionario", "p.*, f.salarioFuncionario, f.senha")[0];
+            if($funcInfo) {
+                $fun = new Funcionario($funcInfo["nomePessoa"], $funcInfo["cpfPessoa"], $funcInfo["idPessoa"], $funcInfo["salarioFuncionario"], $funcInfo["senha"]);
+            }
+            else
+                echo json_encode("Erro: Não existe Pessoa Funcionário");
+
+
+            $tempId = $data["idCliente"];
+            $clientInfo = DBRead("hel_pessoa as p, hel_cliente as c", "WHERE p.idPessoa = '$tempId' and p.idPessoa = c.idCliente", "p.*, c.email, c.endereco")[0];
+            if($clientInfo)
+                $cli = new Cliente($clientInfo["nomePessoa"], $clientInfo["cpfPessoa"], $clientInfo["idPessoa"], $clientInfo["email"], $clientInfo["endereco"]);
+            else
+                echo json_encode("Erro: Não existe Pessoa Cliente");
+
+
+            $tempId = $data["idCategoria"];
+            $categoriaInfo = DBRead("hel_categoria", "WHERE idCategoria = '$tempId'")[0];
+            if($categoriaInfo)
+                $cat = new Categoria($categoriaInfo["idCategoria"], $categoriaInfo["nome"], $categoriaInfo["descricao"]);
+            else
+                echo json_encode("Erro: Não existe Categoria");
+            if($data['date'] & $data['duracao'] & $data['detalhes']){
+                $return = DBRead("hel_protocolo", null, "idProtocolo");
+                if($return) {
+                    end($return);
+                    $key = key($return);
+                    $data["idProtocolo"] = "PRO" . getId($return[$key]["idProtocolo"]);
+
+                }
+                else
+                    $data["idProtocolo"] = "PRO01";
+
+            }else
+                json_encode("Preencha todos os campos");
+            $pro = new Protocolo($fun, $cli, $data["date"], $data["duracao"] . "Mins", $data["idProtocolo"], $data["detalhes"], $cat);
+
+            DBInsert("protocolo", $pro->toArray());
+            echo json_encode("Protocolo inserido com sucesso");
+        }
     }else{
         echo json_encode("Tabela não válida");
+    }
+
+    function getFormattedDate($date){
+        $months = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+        $pos = false;
+        $monthNumber=0;
+        foreach($months as $i){
+            $pos = strpos($date, $i);
+            $monthNumber++;
+            if($pos)
+                break;
+
+        }
+        $r = str_replace($months[$monthNumber-1], $monthNumber<10 ? '0'.$monthNumber : $monthNumber, str_replace(' ', '-', substr($date, $pos, 11)));
+        return substr($r, 6, strlen($r)) . '-' . substr($r, 0, 2) .'-'. substr($r, 3, 2);
     }
 
     function getId($string){

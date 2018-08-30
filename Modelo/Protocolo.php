@@ -9,6 +9,7 @@
 class Protocolo{
     private $funcionario;
     private $cliente;
+    private $categoria;
     private $data;
     private $tempoDuracao;
     private $idProtocolo;
@@ -23,7 +24,7 @@ class Protocolo{
      * @param $idProtocolo
      * @param $detalhes
      */
-    public function __construct(Funcionario $funcionario = null,Cliente $cliente = null, $data = null, $tempoDuracao = null, $idProtocolo = null, $detalhes = null)
+    public function __construct(Funcionario $funcionario = null,Cliente $cliente = null, $data = null, $tempoDuracao = null, $idProtocolo = null, $detalhes = null, Categoria $categoria = null)
     {
         $this->funcionario = $funcionario;
         $this->cliente = $cliente;
@@ -31,11 +32,28 @@ class Protocolo{
         $this->tempoDuracao = $tempoDuracao;
         $this->idProtocolo = $idProtocolo;
         $this->detalhes = $detalhes;
+        $this->categoria = $categoria;
+    }
+
+    /**
+     * @return Categoria
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+
+    /**
+     * @param Categoria $categoria
+     */
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
     }
 
     public function toArray(){
         return array("fk_idFuncionario" => $this->funcionario->getId(), "fk_idCliente" => $this->cliente->getId(), "idProtocolo" => $this->getIdProtocolo(),
-                     "data" => $this->data, "tempoDuracao" => $this->tempoDuracao, "detalhes" => $this->getDetalhes());
+                     "data" => $this->data, "tempoDuracao" => $this->tempoDuracao, "detalhes" => $this->getDetalhes(), "fk_idCategoria" => $this->getCategoria()->getId());
     }
 
     /**
