@@ -13,6 +13,7 @@ function DBDelete($table, $where = null){
     $query = "DELETE FROM {$table}{$where}";
     return DBExecute($query);
 }
+
 function DBUpdate($table, array $data, $where = null){
     $table = DB_PREFIX . '_' . $table;
     $where = ($where) ? " WHERE {$where}" : null;
@@ -25,6 +26,7 @@ function DBUpdate($table, array $data, $where = null){
     $query ="UPDATE {$table} SET {$fields}{$where}";
     return DBExecute($query);
 }
+
 function DBRead($table, $params = null, $fields = "*"){
     $params = ($params) ? " {$params}" : null;
     $query = "SELECT {$fields} FROM {$table}{$params}";

@@ -3,6 +3,7 @@
     $json = file_get_contents("php://input");
     $obj = json_decode($json, true);
     $table = $obj["table"];
+    $isEdit = $obj["edit"];
 
     if($table){
         if(strcmp($table, "funcionario")==0) {
@@ -10,25 +11,37 @@
             $data["cpfPessoa"] = $obj["cpfPessoa"];
             $data["salarioFuncionario"] = $obj["salarioFuncionario"];
             $data["senha"] = hash('sha256', $obj["senha"]);
+
             $id = "";
             if ($data["nomePessoa"] & $data["cpfPessoa"] & $data["salarioFuncionario"] & $data["senha"]) {
-                $tempCpf = $data['cpfPessoa'];
-                if (!DBRead("hel_pessoa", "WHERE cpfPessoa = '$tempCpf'")) {
-                    $return = DBRead("hel_funcionario", null, 'idFuncionario');
-                    if ($return) {
-                        end($return);
-                        $key = key($return);
-                        $data["idPessoa"] = "FUN" . getId($return[$key]["idFuncionario"]);
+                if(!$isEdit) {
+                    $tempCpf = $data['cpfPessoa'];
+                    if (!DBRead("hel_pessoa", "WHERE cpfPessoa = '$tempCpf'")) {
+                        $return = DBRead("hel_funcionario", null, 'idFuncionario');
+                        if ($return) {
+                            end($return);
+                            $key = key($return);
+                            $data["idPessoa"] = "FUN" . getId($return[$key]["idFuncionario"]);
 
-                    } else
-                        $data["idPessoa"] = "FUN01";
-                    $data["idFuncionario"] = $data["idPessoa"];
-                    $f = new Funcionario($data["nomePessoa"], $data["cpfPessoa"], $data["idPessoa"], $data["salarioFuncionario"], $data["senha"]);
-                    DBInsert("funcionario", $f->toArray());
-                    echo json_encode("Funcionário cadastrado com sucesso");
+                        } else
+                            $data["idPessoa"] = "FUN01";
+                        $data["idFuncionario"] = $data["idPessoa"];
+                        $f = new Funcionario($data["nomePessoa"], $data["cpfPessoa"], $data["idPessoa"], $data["salarioFuncionario"], $data["senha"]);
+                        DBInsert("funcionario", $f->toArray());
+                        echo json_encode("Funcionário cadastrado com sucesso");
 
-                }else{
-                    echo json_encode("CPF já está cadastrado");
+
+                    } else {
+                        echo json_encode("CPF já está cadastrado");
+                    }
+                }
+                else{
+                    $tempId = $obj["idPessoa"];
+                    $personData = array($data["nomePessoa"], $data["cpfPessoa"]);
+                    $funcionarioData = array($data["salarioFuncionario"], $data["senha"]);
+                    DBUpdate("pessoa", $personData, "idPessoa = '$tempId'");
+                    DBUpdate("funcionario", $funcionarioData, "idFuncionario = '$tempId'");
+                    echo json_encode("Funcionário editado com sucesso");
                 }
 
             }else{
@@ -42,22 +55,35 @@
             $data["email"] = $obj["email"];
             $id = "";
             if($data["nomePessoa"] & $data["cpfPessoa"] & $data["endereco"] & $data["email"]){
-                $tempCpf = $data['cpfPessoa'];
-                if(!DBRead("hel_pessoa", "WHERE cpfPessoa = '$tempCpf'")){
-                    $return = DBRead("hel_cliente", null, "idCliente");
-                    if($return){
-                        end($return);
-                        $key = key($return);
-                        $data["idPessoa"] = "CLI" . getId($return[$key]["idCliente"]);
+                if(!$isEdit) {
+                    $tempCpf = $data['cpfPessoa'];
+                    if (!DBRead("hel_pessoa", "WHERE cpfPessoa = '$tempCpf'")) {
+                        $return = DBRead("hel_cliente", null, "idCliente");
+                        if ($return) {
+                            end($return);
+                            $key = key($return);
+                            $data["idPessoa"] = "CLI" . getId($return[$key]["idCliente"]);
 
-                    }else
-                        $data["idPessoa"] = "CLI01";
-                    $data["idCliente"] = $data["idPessoa"];
-                    $c = new Cliente($data["nomePessoa"], $data["cpfPessoa"], $data["idPessoa"], $data["email"], $data["endereco"]);
-                    DBInsert("cliente", $c->toArray());
-                    echo json_encode("Cliente cadastrado com sucesso");
-                }else
-                    echo json_encode("CPF já está cadastrado");
+                        } else
+                            $data["idPessoa"] = "CLI01";
+                        $data["idCliente"] = $data["idPessoa"];
+                        $c = new Cliente($data["nomePessoa"], $data["cpfPessoa"], $data["idPessoa"], $data["email"], $data["endereco"]);
+                        DBInsert("cliente", $c->toArray());
+                        echo json_encode("Cliente cadastrado com sucesso");
+
+                    } else
+                        echo json_encode("CPF já está cadastrado");
+                }else{
+                    $tempId = $obj["idPessoa"];
+
+                    $personData["nomePessoa"] = $data["nomePessoa"];
+                    $personData["cpfPessoa"] = $data["cpfPessoa"];
+                    $clienteData["email"] = $data["email"];
+                    $clienteData["endereco"] = $data["endereco"];
+                    DBUpdate("pessoa", $personData, "idPessoa = '$tempId'");
+                    DBUpdate("cliente", $clienteData, "idCliente = '$tempId'");
+                    echo json_encode("Cliente editado com sucesso");
+                }
 
             }else
                 echo json_encode("Preencha todos os campos");
@@ -67,25 +93,32 @@
             $data["descricao"] = $obj["descricao"];
             $id = "";
             if($data["nome"] & $data["descricao"]){
-                $tempNome = $data["nome"];
-                if(!DBRead("hel_categoria", "WHERE nome = '$tempNome'")){
-                    $return = DBRead("hel_categoria", null, "idCategoria");
-                    if($return){
-                        end($return);
-                        $key = key($return);
-                        $data["idCategoria"] = "CAT" . getId($return[$key]["idCategoria"]);
-                    }else{
-                        $data["idCategoria"] = "CAT01";
+                if(!$isEdit) {
+                    $tempNome = $data["nome"];
+                    if (!DBRead("hel_categoria", "WHERE nome = '$tempNome'")) {
+                        $return = DBRead("hel_categoria", null, "idCategoria");
+                        if ($return) {
+                            end($return);
+                            $key = key($return);
+                            $data["idCategoria"] = "CAT" . getId($return[$key]["idCategoria"]);
+                        } else {
+                            $data["idCategoria"] = "CAT01";
+                        }
+                        $c = new Categoria($data["idCategoria"], $data["nome"], $data["descricao"]);
+                        DBInsert("categoria", $c->toArray());
+                        echo json_encode("Categoria cadastrada com sucesso");
+                    } else {
+                        echo json_encode("Categoria já existente");
                     }
-                    $c = new Categoria($data["idCategoria"], $data["nome"], $data["descricao"]);
-                    DBInsert("categoria", $c->toArray());
-                    echo json_encode("Categoria cadastrada com sucesso");
                 }else{
-                    echo json_encode("Categoria já existente");
+                    $tempId = $data["idCategoria"];
+                    DBUpdate("categoria", array($data["nome"], $data["descricao"]), "idCategoria = '$tempId'");
+                    echo json_encode("Categoria editada com sucesso");
                 }
             }else
                 echo json_encode("Preencha todos os campos");
         }
+
         else if(strcmp($table, "protocolo")==0){
             $data["date"] = getFormattedDate($obj["date"]);
             $data["duracao"] = $obj["duracao"];
@@ -120,23 +153,34 @@
                 $cat = new Categoria($categoriaInfo["idCategoria"], $categoriaInfo["nome"], $categoriaInfo["descricao"]);
             else
                 echo json_encode("Erro: Não existe Categoria");
-            if($data['date'] & $data['duracao'] & $data['detalhes']){
-                $return = DBRead("hel_protocolo", null, "idProtocolo");
-                if($return) {
-                    end($return);
-                    $key = key($return);
-                    $data["idProtocolo"] = "PRO" . getId($return[$key]["idProtocolo"]);
 
+
+            if($data['date'] & $data['duracao'] & $data['detalhes']){
+                if(!$isEdit) {
+                    $return = DBRead("hel_protocolo", null, "idProtocolo");
+                    if ($return) {
+                        end($return);
+                        $key = key($return);
+                        $data["idProtocolo"] = "PRO" . getId($return[$key]["idProtocolo"]);
+
+                    } else
+                        $data["idProtocolo"] = "PRO01";
+                }else{
+                    $data["idProtocolo"] = $obj["idProtocolo"];
                 }
-                else
-                    $data["idProtocolo"] = "PRO01";
 
             }else
                 json_encode("Preencha todos os campos");
             $pro = new Protocolo($fun, $cli, $data["date"], $data["duracao"] . "Mins", $data["idProtocolo"], $data["detalhes"], $cat);
+            if(!$isEdit) {
+                DBInsert("protocolo", $pro->toArray());
+                echo json_encode("Protocolo inserido com sucesso");
+            }else{
+                $tempId = $data["idProtocolo"];
+                DBUpdate("protocolo", $pro->toArray(), "idProtocolo = '$tempId'");
+                echo json_encode("Protocolo editado com sucesso");
 
-            DBInsert("protocolo", $pro->toArray());
-            echo json_encode("Protocolo inserido com sucesso");
+            }
         }
     }else{
         echo json_encode("Tabela não válida");
