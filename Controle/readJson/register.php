@@ -14,6 +14,7 @@
 
             $id = "";
             if ($data["nomePessoa"] & $data["cpfPessoa"] & $data["salarioFuncionario"] & $data["senha"]) {
+
                 if(!$isEdit) {
                     $tempCpf = $data['cpfPessoa'];
                     if (!DBRead("hel_pessoa", "WHERE cpfPessoa = '$tempCpf'")) {
@@ -37,8 +38,10 @@
                 }
                 else{
                     $tempId = $obj["idPessoa"];
-                    $personData = array($data["nomePessoa"], $data["cpfPessoa"]);
-                    $funcionarioData = array($data["salarioFuncionario"], $data["senha"]);
+                    $personData["nomePessoa"] = $data["nomePessoa"];
+                    $personData["cpfPessoa"] = $data["cpfPessoa"];
+                    $funcionarioData["salarioFuncionario"] = $data["salarioFuncionario"];
+                    $funcionarioData["senha"] = $data["senha"];
                     DBUpdate("pessoa", $personData, "idPessoa = '$tempId'");
                     DBUpdate("funcionario", $funcionarioData, "idFuncionario = '$tempId'");
                     echo json_encode("Funcionário editado com sucesso");
@@ -111,8 +114,8 @@
                         echo json_encode("Categoria já existente");
                     }
                 }else{
-                    $tempId = $data["idCategoria"];
-                    DBUpdate("categoria", array($data["nome"], $data["descricao"]), "idCategoria = '$tempId'");
+                    $tempId = $obj["idCategoria"];
+                    DBUpdate("categoria", array("nome" => $data["nome"], "descricao" => $data["descricao"]), "idCategoria = '$tempId'");
                     echo json_encode("Categoria editada com sucesso");
                 }
             }else
@@ -129,7 +132,6 @@
             $fun = null;
             $cli = null;
             $cat = null;
-
             $tempId = $data["idFuncionario"];
             $funcInfo = DBRead("hel_pessoa as p, hel_funcionario as f", "WHERE p.idPessoa = '$tempId' and p.idPessoa = f.idFuncionario", "p.*, f.salarioFuncionario, f.senha")[0];
             if($funcInfo) {
@@ -154,7 +156,6 @@
             else
                 echo json_encode("Erro: Não existe Categoria");
 
-
             if($data['date'] & $data['duracao'] & $data['detalhes']){
                 if(!$isEdit) {
                     $return = DBRead("hel_protocolo", null, "idProtocolo");
@@ -171,13 +172,17 @@
 
             }else
                 json_encode("Preencha todos os campos");
-            $pro = new Protocolo($fun, $cli, $data["date"], $data["duracao"] . "Mins", $data["idProtocolo"], $data["detalhes"], $cat);
+            $pro = new Protocolo($fun, $cli, $data["date"], !$isEdit ? $data["duracao"] . "Mins" : $data["duracao"], $data["idProtocolo"], $data["detalhes"], $cat);
             if(!$isEdit) {
                 DBInsert("protocolo", $pro->toArray());
                 echo json_encode("Protocolo inserido com sucesso");
             }else{
-                $tempId = $data["idProtocolo"];
-                DBUpdate("protocolo", $pro->toArray(), "idProtocolo = '$tempId'");
+                $r = $pro->toArray();
+                //echo json_encode($r["fk_idFuncionario"] . " --- " . $r["fk_idCliente"] . " --- " .$r["data"] . " --- " .$r["tempoDuracao"] . " --- " .$r["detalhes"] . " --- " .$r["idProtocolo"] . " --- " .$r["fk_idCategoria"]);
+
+                $tempId = $obj["idProtocolo"];
+
+                DBUpdate($table, $r, "idProtocolo = '$tempId'");
                 echo json_encode("Protocolo editado com sucesso");
 
             }
@@ -197,8 +202,11 @@
                 break;
 
         }
-        $r = str_replace($months[$monthNumber-1], $monthNumber<10 ? '0'.$monthNumber : $monthNumber, str_replace(' ', '-', substr($date, $pos, 11)));
-        return substr($r, 6, strlen($r)) . '-' . substr($r, 0, 2) .'-'. substr($r, 3, 2);
+        if($pos) {
+            $r = str_replace($months[$monthNumber - 1], $monthNumber < 10 ? '0' . $monthNumber : $monthNumber, str_replace(' ', '-', substr($date, $pos, 11)));
+            return substr($r, 6, strlen($r)) . '-' . substr($r, 0, 2) . '-' . substr($r, 3, 2);
+        }
+        else return $date;
     }
 
     function getId($string){
