@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="54b9e774-1910-4f45-a07d-d7766fd28915" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controle/readJson/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controle/readJson/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controle/readJson/getData.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controle/readJson/getData.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +45,7 @@
     <session id="2125481314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="4" />
@@ -53,6 +53,7 @@
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -61,7 +62,7 @@
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.38" value="2" />
           <entry key="project.open.time.39" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -81,14 +82,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="28" />
-          <entry key="php" value="18595" />
+          <entry key="php" value="18604" />
           <entry key="sql" value="1403" />
           <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="18595" />
+          <entry key="PHP" value="18604" />
           <entry key="PLAIN_TEXT" value="56" />
           <entry key="Scratch" value="1403" />
         </counts>
@@ -102,7 +103,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42208302">
+    <splitter split-orientation="horizontal" split-proportion="0.897879">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -117,8 +118,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Controle/DAO.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+                <state relative-caret-position="697">
+                  <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -135,22 +136,22 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Modelo/Protocolo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="357">
                   <caret line="26" column="136" selection-start-line="26" selection-start-column="136" selection-end-line="26" selection-end-column="136" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Controle/readJson/getData.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="563">
-                  <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+                <state relative-caret-position="393">
+                  <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b53c598d-37d2-4fb8-b3e7-64a98b04a539/console.sql">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
@@ -194,7 +195,7 @@
             <entry file="file://$PROJECT_DIR$/Controle/readJson/deleteData.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="221">
-                  <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+                  <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -243,10 +244,10 @@
         <option value="$PROJECT_DIR$/Controle/readJson/editData.php" />
         <option value="$PROJECT_DIR$/Controle/DAO.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b53c598d-37d2-4fb8-b3e7-64a98b04a539/console_1.sql" />
-        <option value="$PROJECT_DIR$/Controle/readJson/getData.php" />
         <option value="$PROJECT_DIR$/Controle/readJson/register.php" />
         <option value="$PROJECT_DIR$/Controle/readJson/deleteData.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b53c598d-37d2-4fb8-b3e7-64a98b04a539/console.sql" />
+        <option value="$PROJECT_DIR$/Controle/readJson/getData.php" />
       </list>
     </option>
   </component>
@@ -271,7 +272,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,12 +299,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DRM" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -359,7 +360,8 @@
       <workItem from="1536018667195" duration="613000" />
       <workItem from="1536082174247" duration="4328000" />
       <workItem from="1536090205032" duration="10371000" />
-      <workItem from="1536149931289" duration="4723000" />
+      <workItem from="1536149931289" duration="5964000" />
+      <workItem from="1536158729307" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Project">
       <created>1534847523931</created>
@@ -372,7 +374,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102916000" />
+    <option name="totallyTimeSpent" value="104185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +391,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15618336" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15778251" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32952183" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -400,9 +402,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32952183" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32952183" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49413645" weight="0.32952183" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49413645" visible="true" weight="0.32952183" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50586355" side_tool="true" weight="0.32952183" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.32952183" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -511,6 +513,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controle/readJson/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controle/DAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelo/Protocolo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="136" selection-start-line="26" selection-start-column="136" selection-end-line="26" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b53c598d-37d2-4fb8-b3e7-64a98b04a539/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controle/connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -532,20 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modelo/Protocolo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" column="136" selection-start-line="26" selection-start-column="136" selection-end-line="26" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controle/readJson/getData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modelo/Funcionario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -553,31 +569,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controle/readJson/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controle/DAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controle/readJson/deleteData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b53c598d-37d2-4fb8-b3e7-64a98b04a539/console.sql">
+    <entry file="file://$PROJECT_DIR$/Controle/readJson/getData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        <state relative-caret-position="393">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
         </state>
       </provider>
     </entry>

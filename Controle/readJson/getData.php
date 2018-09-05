@@ -10,7 +10,7 @@
             echo json_encode(DBRead("hel_funcionario as f, hel_pessoa as p", "WHERE p.idPessoa = f.idFuncionario", "p.nomePessoa, p.idPessoa, p.cpfPessoa"));
 
         else if (strcmp($table, "cliente") == 0)
-            echo json_encode(DBRead("hel_pessoa as p, hel_cliente as c", "WHERE p.idPessoa = c.idCliente", "nomePessoa, idPessoa, p.cpfPessoa"));
+            echo json_encode(DBRead("hel_pessoa as p, hel_cliente as c", "WHERE p.idPessoa = c.idCliente", "nomePessoa, idPessoa, p.cpfPessoa, c.email"));
 
         else if (strcmp($table, "categoria") == 0)
             echo json_encode(DBRead(DB_PREFIX . '_' . $table, null, "nome, descricao, idCategoria"));
