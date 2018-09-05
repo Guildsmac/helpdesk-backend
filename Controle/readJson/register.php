@@ -155,7 +155,6 @@
                 $cat = new Categoria($categoriaInfo["idCategoria"], $categoriaInfo["nome"], $categoriaInfo["descricao"]);
             else
                 echo json_encode("Erro: Não existe Categoria");
-
             if($data['date'] & $data['duracao'] & $data['detalhes']){
                 if(!$isEdit) {
                     $return = DBRead("hel_protocolo", null, "idProtocolo");
@@ -163,7 +162,7 @@
                         end($return);
                         $key = key($return);
                         $data["idProtocolo"] = "PRO" . getId($return[$key]["idProtocolo"]);
-
+                        $test = getId($return[$key]["idProtocolo"]);
                     } else
                         $data["idProtocolo"] = "PRO01";
                 }else{
@@ -176,6 +175,7 @@
             if(!$isEdit) {
                 DBInsert("protocolo", $pro->toArray());
                 echo json_encode("Protocolo inserido com sucesso");
+
             }else{
                 $r = $pro->toArray();
                 //echo json_encode($r["fk_idFuncionario"] . " --- " . $r["fk_idCliente"] . " --- " .$r["data"] . " --- " .$r["tempoDuracao"] . " --- " .$r["detalhes"] . " --- " .$r["idProtocolo"] . " --- " .$r["fk_idCategoria"]);
